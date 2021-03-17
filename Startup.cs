@@ -1,6 +1,8 @@
+using InteractiveContaclListServer.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +26,11 @@ namespace InteractiveContaclListServer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            string con = "Server=(localdb)\\mssqllocaldb;Database=contactsdb;Trusted_Connection=True;";
+            // устанавливаем контекст данных
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(con));
+
+            services.AddControllers(); // используем контроллеры без представлений
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +57,7 @@ namespace InteractiveContaclListServer
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers(); // подключаем маршрутизацию на контроллеры
             });
         }
     }
