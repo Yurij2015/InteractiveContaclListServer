@@ -23,12 +23,46 @@ namespace InteractiveContaclListServer.Models
         public string LinkedIn { get; set; }
         public string Twitter { get; set; }
 
-
-        public string FaceBookData
+        public string FacebookData
         {
             get
             {
-                return "Данные социальной сети " + this.Facebook;
+                return "Данные социальной сети Facebook " + this.Facebook;
+            }
+        }
+
+        public string InstagramData
+        {
+            get
+            {
+                return "Данные социальной сети Instagram " + this.Instagram;
+
+            }
+        }
+
+        public string VkData
+        {
+            get
+            {
+                return "Данные социальной сети Vk " + this.Vk;
+
+            }
+        }
+
+        public string LinkedInData
+        {
+            get
+            {
+                return "Данные социальной сети LinkedIn " + this.LinkedIn;
+
+            }
+        }
+
+        public string TwitterData
+        {
+            get
+            {
+                return "Данные социальной сети Twitter " + this.Twitter;
 
             }
         }
