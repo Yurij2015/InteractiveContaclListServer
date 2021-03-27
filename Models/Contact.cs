@@ -22,5 +22,16 @@ namespace InteractiveContaclListServer.Models
         public string Vk { get; set; }
         public string LinkedIn { get; set; }
         public string Twitter { get; set; }
+
+
+        public string FaceBookData
+        {
+            get
+            {
+                return "Данные социальной сети " + this.Facebook;
+
+            }
+        }
+
     }
 }
